@@ -1,5 +1,8 @@
+#include <bits/stdc++.h>
+using namespace std;
 
-SinglyLinkedListNode {
+
+struct SinglyLinkedListNode {
     int data;
     SinglyLinkedListNode* next;
 };

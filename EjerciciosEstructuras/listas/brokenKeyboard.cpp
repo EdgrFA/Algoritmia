@@ -12,26 +12,18 @@ int main(){
     bool home = false;
     list<char> line, hline;
     while((c = getchar()) != EOF){
-        if(c == '[') {
+        if(c == '[' || c == ']' || c == '\n') {
             if(home && !hline.empty()){
                 line.insert(line.begin(),hline.begin(),hline.end());
                 hline.clear();
             }
-            home = true;
-        } else if(c == ']') {
-            if(home && !hline.empty()){
-                line.insert(line.begin(),hline.begin(),hline.end());
-                hline.clear();
+            if(c == '[') home = true; 
+            else if(c == ']') home = false;
+            else {
+                printLine(line);
+                line.clear();
+                cout << "\n";
             }
-            home = false;
-        } else if(c == '\n'){
-            if(!hline.empty()){ 
-                line.insert(line.begin(),hline.begin(),hline.end());
-                hline.clear();
-            }
-            printLine(line);
-            line.clear();
-            cout << "\n";
         } else if(home){
             hline.push_back(c);
         } else line.push_back(c);

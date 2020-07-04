@@ -1,4 +1,4 @@
-//https://www.hackerrank.com/challenges/castle-on-the-grid/problem#include <bits/stdc++.h>
+//https://www.hackerrank.com/challenges/castle-on-the-grid/problem
 #include <bits/stdc++.h>
 using namespace std;
 
