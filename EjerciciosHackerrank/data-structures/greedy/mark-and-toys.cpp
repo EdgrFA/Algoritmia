@@ -17,7 +17,16 @@ vector<string> split(const string &);
  */
 
 int maximumToys(vector<int> prices, int k) {
-
+    int toys = 0;
+    sort(prices.begin(), prices.end());
+    for (int price: prices) {
+        if (k >= price) {
+            k -= price;
+            toys++;
+        }
+        else break;
+    }
+    return toys;
 }
 
 int main()
